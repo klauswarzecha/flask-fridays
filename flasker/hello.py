@@ -6,7 +6,7 @@ app = Flask(__name__)
 def home():
     name = 'Klaus'
     stuff = 'My hovercraft is full of eels!'
-    cheeses = ['Blue Stilton', 'Cheddar', 'Wensleydale', 'Sage Derby']
+    cheeses = ['Blue Stilton', 'Cheddar', 'Wensleydale', 'Sage Derby', 56]
     
     return render_template(
         'index.html', 

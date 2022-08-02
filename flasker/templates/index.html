@@ -1,4 +1,4 @@
-<h1>My first website! YAY!!</h1>
+<h1>Logic in Jinja</h1>
 <div>
     <p>My name ist {{ name }}.</p>
     <p>{{ stuff | title}}</p>
@@ -7,6 +7,15 @@
 <h2>Cheeses</h2>
 <ul>
 {% for cheese in cheeses %}
-    <li>{{ cheese }}</li>
+    {%if cheese == 56 %}
+        <li>{{ cheese + 100 }}</li>
+    {%else %}
+        <li>{{ cheese }}</li>
+    {%endif %}
+
 {% endfor %}
 </ul>
+
+<!-- Address inidividual list elements -->
+<p>Individual list elements may be addressed via their index:</p>
+<p>The second cheese is {{ cheeses.1 }}</p>
