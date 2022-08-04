@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <h1>Logic in Jinja</h1>
 <div>
     <p>My name ist {{ name }}.</p>
@@ -12,10 +15,10 @@
     {%else %}
         <li>{{ cheese }}</li>
     {%endif %}
-
 {% endfor %}
 </ul>
 
 <!-- Address inidividual list elements -->
 <p>Individual list elements may be addressed via their index:</p>
 <p>The second cheese is {{ cheeses.1 }}</p>
+{% endblock %}
