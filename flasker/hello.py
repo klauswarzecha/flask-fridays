@@ -1,10 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 import waitress
 
 app = Flask(__name__)
 
 @app.route('/')
-def home():
+def index():
     name = 'Klaus'
     stuff = 'My hovercraft is full of eels!'
     cheeses = ['Blue Stilton', 'Cheddar', 'Wensleydale', 'Sage Derby', 56]
