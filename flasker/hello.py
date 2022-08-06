@@ -1,7 +1,14 @@
 from flask import Flask, render_template, url_for
-import waitress
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from wtforms.validators import DataRequired
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'thisisnotsecretatallbutwecanchangethatlater'
+
+class NamerForm(FlaskForm):
+    name = StringField('What\'s Your Name', validators=[DataRequired()])
+    submit = SubmitField('Submit')
 
 @app.route('/')
 def index():
@@ -19,6 +26,21 @@ def index():
 @app.route('/user/<username>')
 def user(username):
     return render_template('user.html', username=username)
+
+@app.route('/name', methods=['GET', 'POST'])
+def name():
+    name = None
+    form = NamerForm()
+    if form.validate_on_submit():
+        name = form.name.data
+        form.name.data = ''
+        
+    return render_template(
+        'name.html', 
+        name=name, 
+        form=form
+    )
+
 
 
 # custom error pages
