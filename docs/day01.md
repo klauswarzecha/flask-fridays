@@ -12,3 +12,16 @@ So, for me it was
 
 ```mamba create --name flask python=3.11 flask ipython```
 
+## Minimal example
+
+John outlined a minimal example that does **not** contain a an `app.run()` command, but is started from the terminal via 
+
+    1. export FLASK_ENV=development
+    2. export FLASK_APP=hello.py
+    3. flask run
+
+With the current version of flask (2.2.2) this still works, but when you do, there is a warning 
+
+```'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.```
+
+
