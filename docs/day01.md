@@ -25,3 +25,17 @@ With the current version of flask (2.2.2) this still works, but when you do, the
 ```'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.```
 
 
+## A dynamic URL - Pass an argument to a website
+
+When an argument in pointed brackets is part of the route, as in 
+
+```python
+@app.route('/user/<name>')
+```
+
+it can be passed to the corresponding function 
+
+```python
+def user(name):
+```
+
