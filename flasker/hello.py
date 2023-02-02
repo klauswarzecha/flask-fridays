@@ -19,4 +19,3 @@ def index():
 def user(name):
     # pass an argument to the "website"
     return "<h1>Hello {}</h1>".format(name)
-
