@@ -39,3 +39,6 @@ it can be passed to the corresponding function
 def user(name):
 ```
 
+## Render a first template
+
+Flask looks for HTML templates in the `templates` directory. These templates can be returned using the `render_template` method.

@@ -4,9 +4,14 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 # create a route decorator
+# @app.route('/')
+# def index():
+#     return "<h1>Hello World!</h1>"
+
 @app.route('/')
 def index():
-    return "<h1>Hello World!</h1>"
+    return render_template('index.html')
+
 
 
 # localhost:5000/user/name
